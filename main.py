@@ -9,7 +9,7 @@ import utils
 import TD3_BC
 
 
-# Runs policy for X episodes and returns average reward
+# Runs policy for X episodes and returns D4RL score
 # A fixed seed is used for the eval environment
 def eval_policy(policy, env_name, seed, mean, std, seed_offset=100, eval_episodes=10):
 	eval_env = gym.make(env_name)
@@ -25,10 +25,10 @@ def eval_policy(policy, env_name, seed, mean, std, seed_offset=100, eval_episode
 			avg_reward += reward
 
 	avg_reward /= eval_episodes
-	d4rl_score = eval_env.get_normalized_score(avg_reward)
+	d4rl_score = eval_env.get_normalized_score(avg_reward) * 100
 
 	print("---------------------------------------")
-	print(f"Evaluation over {eval_episodes} episodes: {d4rl_score:.3f}")
+	print(f"Evaluation over {eval_episodes} episodes: {avg_reward:.3f}, D4RL score: {d4rl_score:.3f}")
 	print("---------------------------------------")
 	return d4rl_score
 

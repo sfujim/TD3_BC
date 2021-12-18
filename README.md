@@ -10,5 +10,16 @@ The paper results can be reproduced by running:
 ./run_experiments.sh
 ```
 
+
+### Bibtex
+```
+@inproceedings{fujimoto2021minimalist,
+	title={A Minimalist Approach to Offline Reinforcement Learning},
+	author={Scott Fujimoto and Shixiang Shane Gu},
+	booktitle={Thirty-Fifth Conference on Neural Information Processing Systems},
+	year={2021},
+}
+```
+
 ---
 *This is not an official Google product. 
